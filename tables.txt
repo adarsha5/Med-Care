@@ -1,0 +1,8 @@
+CREATE TABLE products ( pid int NOT null PRIMARY key , pname varchar(20) not null , pimg varchar(100) not null,pimg1 varchar(100) not null,pimg2 varchar(100) not null,pimg3 varchar(100) not null, pdes varchar(100) not null, mainprice int not null , brand varchar(100) not null )
+
+
+CREATE TABLE delivery ( did int NOT null PRIMARY key ,fname varchar(20) NOT null,lname varchar(20) not null, phone varchar(10) not null ,dist varchar(20) not null,ps varchar(20) not null,pin int(10) not null,status1 varchar(20) not null)
+
+
+CREATE TABLE customers ( ph varchar(10) not null, address varchar(20) not null, password varchar(20) not null,name varchar(10) not null)
+

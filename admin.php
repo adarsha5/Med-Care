@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+
+    <link rel="stylesheet" href="sttyle.css">
+    <title>Home</title>
+    <style>
+        #signupsec,
+        #loginsec {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            right: -600px;
+            height: 100vh;
+            width: 20vw;
+            background-color: #e3e6f3;
+            box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+            padding: 80px 0 0 10px;
+            transition: 0.5s;
+            z-index: 10;
+        }
+
+        #signupsec.active2,
+        #loginsec.active1 {
+            right: 0px;
+        }
+
+        #loginbtn {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        #signupbtn {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            ;
+        }
+
+        #loginbtn:hover,
+        #signupbtn:hover {
+            background-color: #088178;
+            color: #fff;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Spartan', sans-serif;
+    }
+
+    #signupsec,
+    #loginsec {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      right: -600px;
+      height: 100vh;
+      width: 20vw;
+      background-color: #e3e6f3;
+      box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+      padding: 80px 0 0 10px;
+      transition: 0.5s;
+      z-index: 10;
+    }
+
+    #signupsec.active2,
+    #loginsec.active1 {
+      right: 0px;
+    }
+
+    #loginbtn {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    #signupbtn {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+
+    }
+
+    #loginbtn:hover,
+    #signupbtn:hover,
+    #checkoutsubmit:hover {
+      background-color: #088178;
+      color: #fff;
+    }
+
+
+    .checkoutform {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #e3e6f3;
+      box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+      width: 75%;
+      height: 75vh;
+      margin: auto;
+      margin-bottom: 100px;
+      font-size: 70px;
+      font-weight: 800;
+      /* margin-top: 500vh; */
+
+    }
+
+    .checkoutform form {
+      margin-left: 100px;
+    }
+
+    .checkoutform form input {
+      border: 1px solid #e3e6f3;
+      box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      border-radius: 10px;
+      width: 200px;
+      height: 30px;
+      outline: none;
+    }
+
+    #checkoutsubmit {
+      width: 150%;
+      font-size: 14px;
+      background-color: #fff;
+      font-weight: 600;
+      /* padding: 14px 0; */
+      color: #000;
+      border-radius: 10px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: 0.2s;
+      height: 35px;
+    }
+
+    #sutotal {
+      width: 150%;
+      /* border-collapse: collapse;*/
+      /* border: 1px solid black;  */
+      /* margin-left: 0; */
+      /* width: 2500px; */
+    }
+
+    #cart-end {
+      margin-right: 5%;
+      /* border: 1px solid black; */
+      border-radius: 20px;
+      width: 50%;
+      box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    tr {
+      border: 1px solid black;
+    }
+
+    #total,
+    #status {
+      display: none;
+    }
+
+    span {
+      color: red;
+    }
+    button{
+        margin: 20px 0;
+        width: 250PX;
+    }
+    button:hover {
+            background-color: #088178;
+            color: #fff;
+        }
+        #header{
+            background-image: url("img/header.png");
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img src="https://source.unsplash.com/1600x900/?code" alt=""> -->
+
+
+    
+    <section id="header">
+        <a href="#"><img src="img/logo1.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="home.php">Home</a></li>
+                <li><a href="shop.php">Shop</a></li>
+                <li><a href="blog.php">Blog</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li id="lg-bag"><a href="cart.php"><i class="fas fa-shopping-bag"></i></a></li>
+                <!-- <button id="loginbtn" class="normal">Sign Up</button>
+                <button id="signupbtn" class="normal">Log In</button> -->
+                <a href="#" id="close"><i class="fas fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.php"><i class="fas fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="aftercheck" class="checkoutform">
+        <h1>Wellcome Mr. <STRong><span style="color: red;">ADMIN</span></STRong></h1>
+        <button class="normal" id="logbtn"><a href="addproduct.php">ADD PRODUCT</a></button>
+        <button class="normal" id="logbtn">REMOVE PRODUCT</button>
+        <button class="normal" id="logbtn">REMOVE A USER</button>
+        <button class="normal" id="logbtn">ORDER DETAILS</button>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col1">
+            <img class="logo" src="img/logo1.png" alt="">
+            <h4>Contact</h4>
+            <p> <strong>Address : </strong> Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            <p> <strong>Phone : </strong> (+91)75 0141 7553/(+91) 85 0591 9254</p>
+            <p> <strong>Hours : </strong> 10:00 - 18:00 , Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <i class="fas fa-shopping-bag"></i>
+                    <i class="fas fa-shopping-bag"></i>
+                    <i class="fas fa-shopping-bag"></i>
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col1">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivary Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="col1">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col1 install">
+            <h4>Install APP</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateway</p>
+            <img src="img/pay/pay.png" alt="">
+        </div>
+        <div class="copyright">
+            <p>Lorem ipsum dolor sit, <strong>Copyright</strong> amet consectetur adipisicing.</p>
+        </div>
+    </footer>
+
+    <!-- <img src="https://source.unsplash.com/1600x900/?code" alt=""> -->
+
+    <script>
+        const signup = document.getElementById('signupbtn');
+        const close2 = document.getElementById('close2');
+        const signform = document.getElementById('signupsec');
+        if (signup) {
+            signup.addEventListener('click', () => {
+                signform.classList.add('active2');
+            })
+        }
+        if (close2) {
+            close2.addEventListener('click', () => {
+                signform.classList.remove('active2');
+            })
+        }
+        const login = document.getElementById('loginbtn');
+        const close1 = document.getElementById('close1');
+        const loginform = document.getElementById('loginsec');
+        if (login) {
+            login.addEventListener('click', () => {
+                loginform.classList.add('active1');
+            })
+        }
+        if (close1) {
+            close1.addEventListener('click', () => {
+                loginform.classList.remove('active1');
+            })
+        }
+    </script>
+</body>
+
+</html>
